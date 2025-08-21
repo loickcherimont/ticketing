@@ -2,6 +2,6 @@ export type Ticket = {
     id: number;
     title: string;
     description: string;
-    status: "open" | "in-progress" | "closed";
+    status: "OPEN" | "IN_PROGRESS" | "CLOSED";
     solution: string;
 };
