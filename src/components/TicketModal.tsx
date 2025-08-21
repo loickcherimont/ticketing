@@ -24,17 +24,13 @@ export function TicketModal({ ticket }: TicketModalProps) {
             </DialogTrigger>
             <DialogContent className="sm:max-w-lg w-full">
                 <DialogHeader>
-                    <DialogTitle>Ticket Details</DialogTitle>
+                    <DialogTitle>Ticket #{ticket.id}</DialogTitle>
                     <DialogDescription>
-                        Details of ticket ID #{ticket.id}
+                        Details 
                     </DialogDescription>
                 </DialogHeader>
 
                 <div className="grid gap-4 py-4">
-                    <div className="grid grid-cols-1 gap-2">
-                        <Label htmlFor="ticketID">ID</Label>
-                        <Input value={ticket.id} disabled  id="ticketID"/>
-                    </div>
 
                     <div className="grid grid-cols-1 gap-2">
                         <Label htmlFor="ticketTitle">Title</Label>
@@ -43,7 +39,7 @@ export function TicketModal({ ticket }: TicketModalProps) {
 
                     <div className="grid grid-cols-1 gap-2">
                         <Label htmlFor="ticketDescription">Description</Label>
-                        <Textarea placeholder="Type your message here." value={ticket.description} disabled id="ticketDescription"/>
+                        <Textarea placeholder="Type your message here." value={ticket.description} disabled id="ticketDescription" className="min-h-32"/>
                     </div>
 
                     <div className="grid grid-cols-1 gap-2">
