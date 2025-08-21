@@ -1,31 +1,26 @@
-import { TicketModal } from './components/TicketModal';
+import { NewTicketComponent } from './components/NewTicketComponent';
 import { TicketRow } from './components/TicketRow'
 import { useTickets } from './hooks/useTickets';
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog"
 
 function App() {
 
-  const { tickets, loading, error } = useTickets();
-
-  // refacto: use Skeleton for loading
-  if (loading) return <div className="p-8">Loading tickets...</div>;
-  if (error) return <div className="p-8 text-red-500">Error: {error}</div>;
-  if (tickets.length === 0) return <div className="p-8 text-gray-500">No tickets found</div>;
-
-
+  const { tickets, loading, error, addTicket } = useTickets();
 
   return (
     <>
-      <div className="p-8 flex flex-col gap-2">
-        {tickets.map((ticket) => (<TicketRow key={ticket.id} ticket={ticket} />))}
-      </div>      
+     <div className="p-8">
+       <NewTicketComponent onCreated={addTicket} />
+     </div>
+      {loading && <div className="p-8">Loading tickets...</div>}
+      {error && <div className="p-8 text-red-500">Error: {error}</div>}
+      {!loading && !error && tickets.length === 0 && (
+        <div className="p-8 text-gray-500">No tickets found</div>
+      )}
+      {!loading && !error && tickets.length > 0 && (
+        <div className="p-8 flex flex-col gap-2">
+          {tickets.map((ticket) => (<TicketRow key={ticket.id} ticket={ticket} />))}
+        </div>
+      )}
     </>
   )
 }
