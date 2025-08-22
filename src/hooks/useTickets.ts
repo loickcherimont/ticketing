@@ -39,5 +39,9 @@ export function useTickets() {
         setTickets((currentTickets) => [ticket, ...currentTickets]);
     };
 
+    // The `refreshTickets` function is returned so that components using this hook
+    // can manually trigger a reload of the tickets from the server if needed.
+    // For example, after an agent updates or deletes a ticket, you might want to
+    // refresh the list to reflect the latest data from the backend.
     return { tickets, loading, error, addTicket, refreshTickets };
 }

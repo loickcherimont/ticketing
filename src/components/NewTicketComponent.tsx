@@ -77,47 +77,67 @@ export function NewTicketComponent({ onCreated }: NewTicketProps) {
 
     return (
         <Dialog open={open} onOpenChange={setOpen}>
-            <DialogTrigger asChild className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">
-                <Button variant="outline">Open a ticket</Button>
+            <DialogTrigger asChild>
+                <Button variant="outline" className="w-full sm:w-auto px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 text-sm sm:text-base">
+                    <svg className="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+                    </svg>
+                    <span className="sm:inline hidden">Open a ticket</span>
+                    <span className="sm:hidden">New Ticket</span>
+                </Button>
             </DialogTrigger>
-            <DialogContent className="sm:max-w-[425px]">
+            <DialogContent className="w-[95vw] max-w-[425px] max-h-[90vh] overflow-y-auto sm:w-full">
                 <form onSubmit={handleSubmit}>
                     <DialogHeader>
-                        <DialogTitle>Create new ticket</DialogTitle>
-                        <DialogDescription>
+                        <DialogTitle className="text-lg sm:text-xl">Create new ticket</DialogTitle>
+                        <DialogDescription className="text-sm">
                             Complete your ticket. Click "send" when it's done.
                         </DialogDescription>
                     </DialogHeader>
                     <div className="grid gap-4 py-4">
 
                         <div className="grid grid-cols-1 gap-2">
-                            <Label htmlFor="ticketTitle">Title</Label>
-                            <Input id="ticketTitle" name="ticket_title" required disabled={isLoading} />
+                            <Label htmlFor="ticketTitle" className="text-sm font-medium">Title</Label>
+                            <Input 
+                                id="ticketTitle" 
+                                name="ticket_title" 
+                                required 
+                                disabled={isLoading}
+                                className="text-sm sm:text-base"
+                                placeholder="Brief description of your issue"
+                            />
                         </div>
 
                         <div className="grid grid-cols-1 gap-2">
-                            <Label htmlFor="ticketDescription">Description</Label>
-                            <Textarea placeholder="Type your message here." id="ticketDescription" name="ticket_description" className="min-h-32" required disabled={isLoading} />
+                            <Label htmlFor="ticketDescription" className="text-sm font-medium">Description</Label>
+                            <Textarea 
+                                placeholder="Type your message here. Be as detailed as possible..." 
+                                id="ticketDescription" 
+                                name="ticket_description" 
+                                className="min-h-24 sm:min-h-32 text-sm sm:text-base resize-none" 
+                                required 
+                                disabled={isLoading} 
+                            />
                         </div>
 
-                        {/* <div className="grid grid-cols-1 gap-2">
-                            <Label htmlFor="ticketStatus">Status</Label>
-                            <Input id="ticketStatus" name="ticket_status" defaultValue={"open"} disabled className="uppercase"/>
-                        </div> */}
-
-                        {/* <div className="grid grid-cols-1 gap-2">
-                            <Label htmlFor="ticketSolution">Solution</Label>
-                            <Input disabled id="ticketSolution" name="ticket_solution" />
-                        </div> */}
                     </div>
-                    <DialogFooter>
+                    <DialogFooter className="flex flex-col sm:flex-row gap-2 sm:gap-0">
                         <DialogClose asChild>
-                            <Button variant="outline" type="button" disabled={isLoading}>
+                            <Button 
+                                variant="outline" 
+                                type="button" 
+                                disabled={isLoading}
+                                className="w-full sm:w-auto text-sm sm:text-base"
+                            >
                                 Cancel
                             </Button>
                         </DialogClose>
                         {/* Don't put "submit" button between DialogClose tags */}
-                        <Button type="submit" disabled={isLoading}>
+                        <Button 
+                            type="submit" 
+                            disabled={isLoading}
+                            className="w-full sm:w-auto text-sm sm:text-base"
+                        >
                             {isLoading ? "Sending..." : "Send"}
                         </Button>
                     </DialogFooter>
