@@ -5,6 +5,7 @@
 import { Route, Routes, Link, useLocation } from "react-router";
 import { Client } from "./components/client";
 import { Agent } from "./components/agent";
+import { Error } from "./components/Error";
 
 // export function App() {
 
@@ -72,10 +73,11 @@ function Navigation() {
 export default function App() {
   return (
     <div className="min-h-screen bg-gray-50">
-      <Navigation />
+      {/* <Navigation /> */}
       <Routes>
-        <Route path="/" element={<Client />}/>
+        <Route path="/customer" element={<Client />}/>
         <Route path="/agent" element={<Agent />}/>
+        <Route path="/*" element={<Error />} />
       </Routes>
     </div>
   )
