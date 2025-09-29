@@ -7,16 +7,6 @@ import {
     DialogTitle,
     DialogDescription,
 } from "@/components/ui/dialog";
-import {
-    Select,
-    SelectTrigger,
-    SelectValue,
-    SelectContent,
-    SelectItem
-} from "@/components/ui/select";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea"
 import type { Ticket } from "@/types/Ticket";
 import { useLocation } from "react-router";
 import { TicketModalClient } from "./client/TicketModalClient";
@@ -48,7 +38,7 @@ export function TicketModal({ ticket }: TicketModalProps) {
     return (
         <Dialog>
             {/* Trigger button with responsive styling */}
-            <DialogTrigger className="inline-flex items-center px-3 py-2 border border-gray-300 shadow-sm text-sm leading-4 font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors duration-200 sm:w-auto w-full justify-center">
+            <DialogTrigger className="inline-flex items-center px-3 py-2 border border-gray-300 shadow-sm text-sm leading-4 font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors duration-200 w-full justify-center cursor-pointer sm:w-auto ">
                 <svg className="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
@@ -72,8 +62,9 @@ export function TicketModal({ ticket }: TicketModalProps) {
                         
                         {/* Status badge in header - responsive positioning */}
                         <div className={`px-3 py-1 rounded-full text-sm font-medium border flex-shrink-0 ${getStatusStyle(ticket.status)}`}>
-                            <span className="sm:inline hidden">{ticket.status.replace('_', ' ')}</span>
-                            <span className="sm:hidden">{ticket.status.split('_')[0]}</span>
+                            {/* <span className="sm:inline hidden">{ticket.status.replace('_', ' ')}</span> */}
+                            <span className="">{ticket.status.replace('_', ' ')}</span>
+                            {/* <span className="sm:hidden">{ticket.status.split('_')[0]}</span> */}
                         </div>
                     </div>
                 </DialogHeader>

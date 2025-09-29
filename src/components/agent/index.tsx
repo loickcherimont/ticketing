@@ -34,14 +34,14 @@ export function Agent() {
                         <div className="flex items-center">
                             <h1 className="ml-3 text-xl font-bold text-gray-900">Agent Dashboard</h1>
                         </div>
-                        <button
+                        {/* <button
                             onClick={() => setRefreshed(true)}
                             className="p-2 rounded-md text-gray-600 hover:text-gray-900 hover:bg-gray-100"
                         >
                             <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
                             </svg>
-                        </button>
+                        </button> */}
                     </div>
                 </div>
             </div>
@@ -60,19 +60,19 @@ export function Agent() {
                             
                             {/* Status Summary Cards - Desktop */}
                             <div className="flex gap-4">
-                                <div className="bg-yellow-50 border border-yellow-200 rounded-lg px-4 py-2">
+                                <div className="bg-yellow-50 border border-yellow-200 rounded-lg px-4 py-2 md:w-32">
                                     <div className="text-2xl font-bold text-yellow-800">
                                         {getTicketCountByStatus("OPEN")}
                                     </div>
                                     <div className="text-xs text-yellow-600">Open</div>
                                 </div>
-                                <div className="bg-blue-50 border border-blue-200 rounded-lg px-4 py-2">
+                                <div className="bg-blue-50 border border-blue-200 rounded-lg px-4 py-2 md:w-32">
                                     <div className="text-2xl font-bold text-blue-800">
                                         {getTicketCountByStatus("IN_PROGRESS")}
                                     </div>
                                     <div className="text-xs text-blue-600">In Progress</div>
                                 </div>
-                                <div className="bg-green-50 border border-green-200 rounded-lg px-4 py-2">
+                                <div className="bg-green-50 border border-green-200 rounded-lg px-4 py-2 md:w-32">
                                     <div className="text-2xl font-bold text-green-800">
                                         {getTicketCountByStatus("CLOSED")}
                                     </div>
@@ -85,7 +85,7 @@ export function Agent() {
             </div>
 
             {/* Mobile Sidebar */}
-            {isSidebarOpen && (
+            {/* {isSidebarOpen && (
                 <div className="lg:hidden fixed inset-0 z-40">
                     <div className="fixed inset-0 bg-gray-600 bg-opacity-75" onClick={() => setIsSidebarOpen(false)}></div>
                     <div className="relative flex-1 flex flex-col max-w-xs w-full bg-white">
@@ -103,9 +103,9 @@ export function Agent() {
                             <div className="flex-shrink-0 flex items-center px-4">
                                 <h2 className="text-lg font-semibold text-gray-900">Dashboard</h2>
                             </div>
-                            <nav className="mt-5 px-2 space-y-1">
+                            <nav className="mt-5 px-2 space-y-1"> */}
                                 {/* Mobile Status Summary */}
-                                <div className="space-y-3 px-3">
+                                {/* <div className="space-y-3 px-3">
                                     <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-3">
                                         <div className="text-xl font-bold text-yellow-800">
                                             {getTicketCountByStatus("OPEN")}
@@ -124,17 +124,17 @@ export function Agent() {
                                         </div>
                                         <div className="text-xs text-green-600">Closed</div>
                                     </div>
-                                </div>
-                            </nav>
+                                </div> */}
+                            {/* </nav>
                         </div>
                     </div>
                 </div>
-            )}
+            )} */}
 
             {/* Main Content */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 lg:py-8">
                 {/* Mobile Status Summary - Horizontal Cards */}
-                <div className="lg:hidden mb-6">
+                {/* <div className="lg:hidden mb-6">
                     <div className="grid grid-cols-3 gap-3">
                         <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-3 text-center">
                             <div className="text-lg font-bold text-yellow-800">
@@ -155,7 +155,7 @@ export function Agent() {
                             <div className="text-xs text-green-600">Closed</div>
                         </div>
                     </div>
-                </div>
+                </div> */}
 
                 {/* Loading State */}
                 {loading && (
@@ -204,7 +204,7 @@ export function Agent() {
                             </h2>
                             <button
                                 onClick={() => setRefreshed(true)}
-                                className="hidden sm:inline-flex items-center px-3 py-2 border border-gray-300 shadow-sm text-sm leading-4 font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                                className="hidden items-center px-3 py-2 border border-gray-300 shadow-sm text-sm leading-4 font-medium rounded-md text-gray-700 bg-white cursor-pointer hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:inline-flex"
                             >
                                 <svg className="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />

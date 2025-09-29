@@ -98,10 +98,10 @@ export function NewTicketComponent({ onCreated }: NewTicketProps) {
 
                         <div className="grid grid-cols-1 gap-2">
                             <Label htmlFor="ticketTitle" className="text-sm font-medium">Title</Label>
-                            <Input 
-                                id="ticketTitle" 
-                                name="ticket_title" 
-                                required 
+                            <Input
+                                id="ticketTitle"
+                                name="ticket_title"
+                                required
                                 disabled={isLoading}
                                 className="text-sm sm:text-base"
                                 placeholder="Brief description of your issue"
@@ -110,22 +110,22 @@ export function NewTicketComponent({ onCreated }: NewTicketProps) {
 
                         <div className="grid grid-cols-1 gap-2">
                             <Label htmlFor="ticketDescription" className="text-sm font-medium">Description</Label>
-                            <Textarea 
-                                placeholder="Type your message here. Be as detailed as possible..." 
-                                id="ticketDescription" 
-                                name="ticket_description" 
-                                className="min-h-24 sm:min-h-32 text-sm sm:text-base resize-none" 
-                                required 
-                                disabled={isLoading} 
+                            <Textarea
+                                placeholder="Type your message here. Be as detailed as possible..."
+                                id="ticketDescription"
+                                name="ticket_description"
+                                className="min-h-24 sm:min-h-32 text-sm sm:text-base resize-none"
+                                required
+                                disabled={isLoading}
                             />
                         </div>
 
                     </div>
-                    <DialogFooter className="flex gap-x-5">
+                    <DialogFooter style={{ justifyContent: "space-around", }}>
                         <DialogClose asChild>
-                            <Button 
-                                variant="outline" 
-                                type="button" 
+                            <Button
+                                variant="outline"
+                                type="button"
                                 disabled={isLoading}
                                 className="w-32 text-sm cursor-pointer sm:text-base"
                             >
@@ -133,8 +133,8 @@ export function NewTicketComponent({ onCreated }: NewTicketProps) {
                             </Button>
                         </DialogClose>
                         {/* Don't put "submit" button between DialogClose tags */}
-                        <Button 
-                            type="submit" 
+                        <Button
+                            type="submit"
                             disabled={isLoading}
                             className="w-32 text-sm cursor-pointer bg-blue-500 hover:bg-blue-600 sm:text-base"
                         >

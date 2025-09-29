@@ -180,8 +180,8 @@ export function TicketModalAgent({ ticket }: TicketModalAgentProps) {
                     <DialogClose asChild>
                         <Button 
                             type="button"
-                            variant="outline" 
-                            className="flex-1 cursor-pointer hover:bg-blue-50 hover:border-blue-300 text-sm sm:text-base py-2 sm:py-2"
+                            variant={"outline"}
+                            className="flex-1 cursor-pointer text-sm py-2 sm:py-2 sm:text-base"
                             onClick={handleSetInProgress}
                             disabled={isProcessing || ticket.status === "IN_PROGRESS"}
                         >
@@ -192,7 +192,7 @@ export function TicketModalAgent({ ticket }: TicketModalAgentProps) {
                     {/* Solve Ticket Button */}
                     <Button 
                         type="submit"
-                        className="flex-1 cursor-pointer bg-green-600 hover:bg-green-700 text-white text-sm sm:text-base py-2 sm:py-2"
+                        className="flex-1 cursor-pointer bg-green-600 hover:bg-green-500 text-white text-sm sm:text-base py-2 sm:py-2"
                         disabled={isProcessing || ticket.status === "CLOSED"}
                     >
                         {isProcessing ? "Processing..." : "Solve Ticket"}

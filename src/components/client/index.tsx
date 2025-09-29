@@ -104,7 +104,7 @@ export function Client() {
                 </div> */}
 
                 {/* Create New Ticket Section - Mobile Collapsible */}
-                <div className="lg:hidden mb-6">
+                {/* <div className="lg:hidden mb-6">
                     {isCreateOpen && (
                         <div className="bg-white rounded-lg shadow-sm border p-4 mb-4">
                             <div className="flex items-center justify-between mb-4">
@@ -121,7 +121,7 @@ export function Client() {
                             <NewTicketComponent onCreated={addTicket} />
                         </div>
                     )}
-                </div>
+                </div> */}
 
                 {/* Create New Ticket Section - Desktop */}
                 <div className="hidden lg:block mb-8">
