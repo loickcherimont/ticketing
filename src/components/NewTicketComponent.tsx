@@ -78,12 +78,12 @@ export function NewTicketComponent({ onCreated }: NewTicketProps) {
     return (
         <Dialog open={open} onOpenChange={setOpen}>
             <DialogTrigger asChild>
-                <Button variant="outline" className="w-full sm:w-auto px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 text-sm sm:text-base">
+                <Button className="w-auto px-4 py-2 text-white rounded-md text-sm cursor-pointer bg-blue-500 hover:bg-blue-600 sm:text-base">
                     <svg className="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
                     </svg>
-                    <span className="sm:inline hidden">Open a ticket</span>
-                    <span className="sm:hidden">New Ticket</span>
+                    {/* <span className="sm:inline hidden">Open a ticket</span> */}
+                    <span>Open a ticket</span>
                 </Button>
             </DialogTrigger>
             <DialogContent className="w-[95vw] max-w-[425px] max-h-[90vh] overflow-y-auto sm:w-full">
@@ -121,13 +121,13 @@ export function NewTicketComponent({ onCreated }: NewTicketProps) {
                         </div>
 
                     </div>
-                    <DialogFooter className="flex flex-col sm:flex-row gap-2 sm:gap-0">
+                    <DialogFooter className="flex gap-x-5">
                         <DialogClose asChild>
                             <Button 
                                 variant="outline" 
                                 type="button" 
                                 disabled={isLoading}
-                                className="w-full sm:w-auto text-sm sm:text-base"
+                                className="w-32 text-sm cursor-pointer sm:text-base"
                             >
                                 Cancel
                             </Button>
@@ -136,7 +136,7 @@ export function NewTicketComponent({ onCreated }: NewTicketProps) {
                         <Button 
                             type="submit" 
                             disabled={isLoading}
-                            className="w-full sm:w-auto text-sm sm:text-base"
+                            className="w-32 text-sm cursor-pointer bg-blue-500 hover:bg-blue-600 sm:text-base"
                         >
                             {isLoading ? "Sending..." : "Send"}
                         </Button>

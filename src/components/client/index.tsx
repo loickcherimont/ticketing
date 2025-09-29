@@ -25,7 +25,7 @@ export function Client() {
                             <h1 className="text-xl font-bold text-gray-900">Customer Support</h1>
                             <p className="text-sm text-gray-600">Create and track tickets</p>
                         </div>
-                        <button
+                        {/* <button
                             onClick={() => setIsCreateOpen(!isCreateOpen)}
                             className="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
                         >
@@ -33,7 +33,8 @@ export function Client() {
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
                             </svg>
                             New Ticket
-                        </button>
+                        </button> */}
+                        <NewTicketComponent onCreated={addTicket} />
                     </div>
                 </div>
             </div>
@@ -79,7 +80,7 @@ export function Client() {
             {/* Main Content */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 lg:py-8">
                 {/* Mobile Status Summary - Horizontal Cards */}
-                <div className="lg:hidden mb-6">
+                {/* <div className="lg:hidden mb-6">
                     <div className="grid grid-cols-3 gap-3">
                         <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-3 text-center">
                             <div className="text-lg font-bold text-yellow-800">
@@ -100,14 +101,14 @@ export function Client() {
                             <div className="text-xs text-green-600">Resolved</div>
                         </div>
                     </div>
-                </div>
+                </div> */}
 
                 {/* Create New Ticket Section - Mobile Collapsible */}
                 <div className="lg:hidden mb-6">
                     {isCreateOpen && (
                         <div className="bg-white rounded-lg shadow-sm border p-4 mb-4">
                             <div className="flex items-center justify-between mb-4">
-                                <h2 className="text-lg font-medium text-gray-900">Create New Ticket</h2>
+                                <h2 className="text-lg font-medium text-gray-900">Create New Ticket 2</h2>
                                 <button
                                     onClick={() => setIsCreateOpen(false)}
                                     className="text-gray-400 hover:text-gray-600"
